@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>şenol 🖤</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #fff0f5;
+            font-family: 'Quicksand', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            color: #d63384;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 35px;
+            padding: 30px 25px;
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(255, 182, 193, 0.4);
+            border: 4px solid #ffb6c1;
+            position: relative;
+            animation: fadeIn 0.6s ease-in-out;
+        }
+        .step {
+            display: none;
+        }
+        .step.active {
+            display: block;
+        }
+        .header-img {
+            width: 130px;
+            height: 130px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #ff69b4;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+        }
+        h1 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 2.2rem;
+            color: #ff1493;
+            margin-bottom: 15px;
+        }
+        p {
+            font-size: 1.15rem;
+            font-weight: 700;
+            line-height: 1.6;
+            margin: 15px 0 25px 0;
+            color: #c71585;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .img-single {
+            max-width: 100%;
+            max-height: 250px;
+            border-radius: 20px;
+            border: 3px solid #ffb6c1;
+            object-fit: contain;
+        }
+        .img-multi {
+            width: 46%;
+            max-height: 180px;
+            border-radius: 20px;
+            border: 3px solid #ffb6c1;
+            object-fit: cover;
+        }
+        .btn {
+            background: linear-gradient(135deg, #ff69b4, #ff1493);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 6px 18px rgba(255, 20, 147, 0.35);
+            transition: all 0.3s ease;
+            font-family: 'Quicksand', sans-serif;
+            outline: none;
+        }
+        .btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 22px rgba(255, 20, 147, 0.45);
+        }
+        .btn:active {
+            transform: translateY(1px);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    
+    <!-- Sayfa 1 -->
+    <div class="step active" id="step1">
+        <img src="IMG_1090.jpeg" alt="Profil Fotoğrafı" class="header-img">
+        <h1>şenol 🖤</h1>
+        <button class="btn" onclick="nextStep(2)">evet benim!!</button>
+    </div>
+
+    <!-- Sayfa 2 -->
+    <div class="step" id="step2">
+        <div class="image-container">
+            <img src="IMG_1083.jpeg" class="img-multi" alt="Fotoğraf 1">
+            <img src="IMG_1084.jpeg" class="img-multi" alt="Fotoğraf 2">
+        </div>
+        <p>canimm su an yanina gelip her hareketine kizararak seni gulduremiyorum belki amaa hevesinin kalmamasina aslaaa goz yumamam</p>
+        <button class="btn" onclick="nextStep(3)">başla💓</button>
+    </div>
+
+    <!-- Sayfa 3 -->
+    <div class="step" id="step3">
+        <div class="image-container">
+            <img src="IMG_1085.jpeg" class="img-single" alt="Fotoğraf 3">
+        </div>
+        <p>bu cicekler senin icin</p>
+        <button class="btn" onclick="nextStep(4)">tesekkur ederim!!!</button>
+    </div>
+
+    <!-- Sayfa 4 -->
+    <div class="step" id="step4">
+        <div class="image-container">
+            <img src="IMG_1086.jpeg" class="img-multi" alt="Fotoğraf 4">
+            <img src="IMG_1087.jpeg" class="img-multi" alt="Fotoğraf 5">
+        </div>
+        <p>seni gulumsetebildim mi? hayir mi? o zamaaannn 13718482 tane sarilma sozu veriyorum</p>
+        <button class="btn" onclick="nextStep(5)">anlastiikk!!</button>
+    </div>
+
+    <!-- Sayfa 5 -->
+    <div class="step" id="step5">
+        <div class="image-container">
+            <img src="IMG_1089.jpeg" class="img-single" alt="Fotoğraf 6">
+        </div>
+        <p>gamzelerini cok seviyorum hep gulumse 💕✨</p>
+    </div>
+
+</div>
+
+<script>
+    function nextStep(stepNumber) {
+        document.querySelectorAll('.step').forEach(step => {
+            step.classList.remove('active');
+        });
+        document.getElementById('step' + stepNumber).classList.add('active');
+    }
+</script>
+
+</body>
+</html>
